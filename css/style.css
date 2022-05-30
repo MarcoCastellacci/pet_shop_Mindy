@@ -187,6 +187,13 @@ body {
     padding: 1rem;
 }
 
+.cont-categorias {
+    width: 30%;
+    display: flex;
+    margin: auto;;
+    justify-content: space-around;
+}
+
 @media (max-width: 991px) {
     .logo {
         width: 25vw;
