@@ -84,8 +84,7 @@ body {
 } */
 
 .navbar {
-    width: 100%;
-    justify-self: flex-end;
+    width: 50%;
 }
 
 .carrito {
@@ -130,6 +129,7 @@ body {
     display: flex;
     align-items: center;
     margin: 2rem auto;
+    margin-top: -2.7rem;
     width: 40%;
 }
 
@@ -150,6 +150,16 @@ body {
     padding: 1.5rem;
     background-color: transparent;
     border: none;
+}
+
+.perrito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perrito img {
+    width: 20%;
 }
 
 .redes {
@@ -187,47 +197,64 @@ body {
     padding: 1rem;
 }
 
-@media (max-width: 991px) {
-    .logo {
-        width: 25vw;
-    }
-    .bars {
-        color: black;
-        font-size: 2rem;
-    }
-    .carrito {
-        width: 5vw;
-        height: 4rem;
-        font-size: 2rem;
-        background-color: transparent;
-        border: none;
-        color: #363636;
-    }
-    .nav-link {
-        font-size: 1.2rem;
-        color: black;
-        height: fit-content;
-        text-align: center;
-        margin: .7rem;
-    }
-    .buscador {
-        display: flex;
-        align-items: center;
-        margin: 2rem auto;
-        width: 60%;
-    }
+.info-extra {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-@media (max-width: 991px) {
-    .nav-footer a {
-        font-size: 1rem;
-    }
-    .footer-datos p {
-        font-size: small;
-    }
-    .icon-redes {
-        font-size: 2rem;
-    }
+.cuotas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    margin-bottom: 1rem;
+}
+
+.cuotas svg {
+    width: 30%;
+}
+
+.envio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    margin-bottom: 1rem;
+}
+
+.envio svg {
+    width: 30%;
+}
+
+.cartas {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.card {
+    width: 20vw;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: #c9e265;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-title {
+    margin-bottom: 1rem;
+}
+
+.productos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 
@@ -276,4 +303,50 @@ td {
 
 h2 {
     text-align: center;
+}
+
+
+/* Media Querys */
+
+@media (max-width: 991px) {
+    .logo {
+        width: 25vw;
+    }
+    .bars {
+        color: black;
+        font-size: 2rem;
+    }
+    .carrito {
+        width: 5vw;
+        height: 4rem;
+        font-size: 2rem;
+        background-color: transparent;
+        border: none;
+        color: #363636;
+    }
+    .nav-link {
+        font-size: 1.2rem;
+        color: black;
+        height: fit-content;
+        text-align: center;
+        margin: .7rem;
+    }
+    .buscador {
+        display: flex;
+        align-items: center;
+        margin: 2rem auto;
+        width: 60%;
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-footer a {
+        font-size: 1rem;
+    }
+    .footer-datos p {
+        font-size: small;
+    }
+    .icon-redes {
+        font-size: 2rem;
+    }
 }
