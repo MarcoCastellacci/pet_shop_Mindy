@@ -15,7 +15,7 @@
     <title>Mindy Pet Shop</title>
 </head>
 
-<body>
+<body class="d-flex flex-column">
     <header>
         <div class="d-flex justify-content-between w-100 head">
             <img class="logo" src="./img/Logo Transparente.png" alt="">
@@ -30,13 +30,13 @@
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-content-center">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Farmacia</a>
+                                    <a class="nav-link" aria-current="page" href="">Farmacia</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Jueguetes</a>
+                                    <a class="nav-link" href="">Jueguetes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Contáctenos</a>
+                                    <a class="nav-link" href="">Contáctenos</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link"><button class="carrito"><i class="fa-solid fa-cart-shopping"></i></button></a>
@@ -53,13 +53,31 @@
             </div>
             <!-- <button class="carrito"><i class="fa-solid fa-cart-shopping"></i></button> -->
         </div>
-        <input type="search" class="buscador">
-        <div>
-            <div></div>
+        <div class="buscador">
+            <input class="buscar-texto" type="search" placeholder="Buscar por productos o categoria">
+            <i class="fa-solid fa-magnifying-glass m-3 lupa"></i>
         </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <main class="flex-grow-1"></main>
+    </main>
+    <footer>
+        <div class="redes">
+            <button class="icon-redes"><i class="fa-brands fa-instagram"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-facebook"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-twitter"></i></button>
+        </div>
+        <div class="footer-datos">
+            <nav class="nav-footer">
+                <a href="">Sobre Mindy</a>
+                <a href="">Productos</a>
+                <a href="">Contacto</a>
+                <a href="">Ayuda</a>
+                <a href="">Legales</a>
+            </nav>
+            <p>© 2021 – Grupo 8 - Alumnos Cohort 28</p>
+        </div>
+    </footer>
 </body>
 
 </html>
