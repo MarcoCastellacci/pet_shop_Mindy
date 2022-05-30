@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Shop List */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.carrito {
+    margin-bottom: 2rem;
+}
+
+input[type="number"] {
+    width: 3rem;
+    text-align: center;
+}
+
+.pre-orden {
+    text-align: center !important;
+}
+
+.trash {
+    height: 1.3rem;
+    margin-bottom: .2rem;
+}
+
+th {
+    padding: 1rem 5rem;
+}
+
+td {
+    text-align: center;
+}
+
+.sub-total {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+}
