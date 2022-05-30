@@ -1,0 +1,21 @@
+.logo {
+    width: 15vw;
+}
+
+.navbar {
+    width: 50vw;
+}
+
+.carrito {
+    width: 5vw;
+    height: 4rem;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: gray;
+}
+
+.nav-link {
+    font-size: 1.3rem;
+    color: black;
+}
