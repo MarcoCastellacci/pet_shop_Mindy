@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.border1 {
+    border: 1px solid red;
+}
+
+.img-card {
+    width: 100%;
+}
+
+.contenedor-parrafo {
+        /* overflow: hidden;
+        white-space: nowrap;
+        word-wrap: break-word;
+        height: 6rem;
+        text-overflow: ellipsis;
+        border: 1px solid red; */
+
+        display: -webkit-box;
+            max-height: 150px;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            /* text-overflow: ellipsis; */
+            /* border: 1px solid red; */
+}
