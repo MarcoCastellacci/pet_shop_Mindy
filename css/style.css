@@ -1,0 +1,117 @@
+/* Tomy Aybar - Toys and Pharmacy */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-verde: #7ed957;
+    --color-verde-claro: #c9e265;
+    --color-amarillo: #ffde59;
+    --color-naranja: #ffbd59;
+    --color-naranja-oscuro: #eea435;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.img-card {
+    width: 100%;
+}
+
+.contenedor-parrafo {
+    overflow-y: scroll;
+    max-height: 100px;
+}
+
+.btn-naranja {
+    color: #fff;
+    background-color: var(--color-naranja);
+    border-color: var(--color-naranja);
+}
+
+.btn:hover {
+    background-color: var(--color-naranja-oscuro);
+    color: #fff;
+    border-color: var(--color-naranja);
+}
+
+.card:hover {
+    box-shadow: 0px 5px 30px -8px #000;
+}
+
+.card {
+    padding: 10px 0;
+    position: relative;
+}
+.stock {
+    background-color: red;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    font-weight: 600;
+    border-radius: 2px;
+    font-size: .8rem;
+    /* display: none; */
+
+
+/* Marco Castellacci - Shop List */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.carrito {
+    margin-bottom: 2rem;
+}
+
+input[type="number"] {
+    width: 3rem;
+    text-align: center;
+}
+
+.pre-orden {
+    text-align: center !important;
+}
+
+.trash {
+    height: 1.3rem;
+    margin-bottom: .2rem;
+}
+
+th {
+    padding: 1rem 5rem;
+}
+
+td {
+    text-align: center;
+}
+
+.sub-total {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+
+}
