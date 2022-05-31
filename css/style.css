@@ -205,6 +205,48 @@ body {
     padding: 1rem;
 }
 
+.botones-cat {
+    display: flex;
+    justify-content: center;
+}
+
+.boton-juguete {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+
+}
+
+.boton-farma {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+
+}
+
+.foto-juguete {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.foto-farma {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.texto-cat {
+    font-size: 1.5rem;
+    padding: .8rem;
+}
+
 .info-extra {
     display: flex;
     justify-content: space-evenly;
@@ -240,13 +282,14 @@ body {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    margin-top: 5rem;
 }
 
 .card {
     width: 20vw;
     margin: 1rem;
     border-radius: 10px;
-    background-color: #c9e265;
+    background-color: #e2dfdf;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,7 +305,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin: 4rem auto;
 }
 
 

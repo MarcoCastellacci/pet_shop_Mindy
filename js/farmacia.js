@@ -1,6 +1,6 @@
 getAPI()
-function getAPI() {
-    fetch('https://apipetshop.herokuapp.com/api/articulos')
+async function getAPI() {
+    await fetch('https://apipetshop.herokuapp.com/api/articulos')
         .then(res => res.json())
         .then(data => {
 
@@ -8,8 +8,13 @@ function getAPI() {
 
             let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
 
-            const contenedorFarmacia = document.querySelector('#contenedor-farmacia');
-
             printCard(farmacia, contenedorFarmacia);
+
+            
         })
 }
+
+// let arrayCarrito = [];
+// contenedorFarmacia.addEventListener('click', (e) => {
+//     agregarProducto(e, arrayCarrito)
+// });
