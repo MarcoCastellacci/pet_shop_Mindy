@@ -1,6 +1,7 @@
 /* Tomy Aybar - Toys and Pharmacy */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -20,6 +21,26 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
+}
+
+.h2-filtro {
+    margin: 5rem auto;
+}
+
+.barra-categoria {
+    background-color: #363636;
+}
+
+.barra-categoria h2 {
+    color: #e2dfdf;
+    padding: 1rem;
+}
+
+.foto-carusel {
+    margin: auto;
+    width: 50%;
+    height: 70vh;
+    object-fit: cover;
 }
 
 .img-card {
@@ -83,8 +104,10 @@ body {
     background-color: gray;
 } */
 
-.navbar {
-    width: 50%;
+.navbar-container {
+    width: fit-content;
+    /* float: right; */
+
 }
 
 .carrito {
@@ -122,7 +145,6 @@ body {
 .navbar-nav {
     display: flex;
     align-items: center;
-    /* margin: 1rem; */
 }
 
 .buscador {
@@ -143,10 +165,10 @@ body {
 
 .buscar-texto {
     width: 100%;
-    ;
     border-radius: 20px;
     border-color: #363636;
     height: 2rem;
+    padding-left: 1rem;
 }
 
 .lupa {
@@ -167,7 +189,8 @@ body {
 }
 
 .perrito img {
-    width: 20%;
+    width: 19%;
+    ;
 }
 
 .redes {
@@ -227,15 +250,15 @@ body {
 }
 
 .foto-juguete {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .foto-farma {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -361,10 +384,12 @@ h2 {
     .logo {
         width: 25vw;
     }
+
     .bars {
         color: black;
         font-size: 2rem;
     }
+
     .carrito {
         width: 5vw;
         height: 4rem;
@@ -373,6 +398,7 @@ h2 {
         border: none;
         color: #363636;
     }
+
     .nav-link {
         font-size: 1.2rem;
         color: black;
@@ -380,20 +406,27 @@ h2 {
         text-align: center;
         margin: .7rem;
     }
+
     .buscador {
         display: flex;
         align-items: center;
-        margin: 2rem auto;
         width: 60%;
     }
+
     .nav-footer a {
         font-size: 1rem;
     }
+
     .footer-datos p {
         font-size: small;
     }
+
     .icon-redes {
         font-size: 2rem;
+    }
+    .perrito img {
+        width: 26%;
+        ;
     }
 }
 
@@ -404,10 +437,51 @@ h2 {
         border-radius: 50%;
         object-fit: cover;
     }
+
     .foto-farma {
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
         object-fit: cover;
     }
+    .perrito img {
+        width: 50%;
+        ;
+    }
+}
+
+@media (max-width: 840px) {
+    .perrito img {
+        width: 30%;
+        ;
+    }
+}
+
+@media (max-width: 680px) {
+    .perrito img {
+        width: 40%;
+        ;
+    }
+}
+
+/* @media (max-width: 612px) {
+    .perrito img {
+        width: 30%;
+        ;
+    }
+} */
+
+@media (max-width: 600px) {
+    .perrito img {
+        width: 50%;
+        ;
+    }
+    .buscador {
+        /* display: flex;
+        align-items: center;
+        margin: 2rem auto;
+        margin-top: -2.7rem; */
+        width: 75%;
+    }
+
 }
