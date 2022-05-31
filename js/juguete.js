@@ -1,17 +1,17 @@
-getAPI()
-async function getAPI() {
-    await fetch('https://apipetshop.herokuapp.com/api/articulos')
-        .then(res => res.json())
-        .then(data => {
+// getAPI()
+// async function getAPI() {
+//     await fetch('https://apipetshop.herokuapp.com/api/articulos')
+//         .then(res => res.json())
+//         .then(data => {
 
-            const productos = data.response;
+//             const productos = data.response;
 
-            let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
+//             let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
 
-            printCard(juguetes, contenedorJuguetes);
+//             printCard(juguetes, contenedorJuguetes);
 
-        })
-}
+//         })
+// }
 
 // let arrayCarrito = [];
 

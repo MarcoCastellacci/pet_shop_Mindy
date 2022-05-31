@@ -29,3 +29,6 @@
 // contenedorFarmacia.addEventListener('click', (e) => {
 //     agregarProducto(e, arrayCarrito)
 // });
+
+
+
