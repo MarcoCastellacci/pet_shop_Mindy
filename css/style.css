@@ -536,6 +536,8 @@ form input:hover {
 
 .botonAtras a:hover {
     background-color: var(--color-verde);
+}.texto-cat {
+    text-align: center;
 }
 
 .mapa {
