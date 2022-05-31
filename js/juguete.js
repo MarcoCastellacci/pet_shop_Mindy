@@ -7,16 +7,29 @@ async function getAPI() {
             const productos = data.response;
 
             let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
+            let contenedorJuguetes = document.getElementById("contenedor-juguetes");
+            let buscador = document.querySelector(".buscar-texto");
 
-            printCard(juguetes, contenedorJuguetes);
+            let texto = "";
+            buscador.addEventListener("keyup", (e) => {
+                texto = e.target.value;
+                mostarFiltro();
+            })
+
+            function mostarFiltro() {
+                let filtro = [];
+                // let ultimoElem = filtroCategoria.length - 1;
+                if (texto != "") {
+                    filtro.push(...juguetes.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))));
+                } else  filtro.push(...juguetes);
+                
+                console.log(filtro)
+                console.log(texto)
+                printCard(filtro, contenedorJuguetes);
+            }
+            mostarFiltro()
 
         })
 }
-
-// let arrayCarrito = [];
-
-// contenedorJuguetes.addEventListener('click', (e) => {
-//     agregarProducto(e, arrayCarrito)
-// });
 
 

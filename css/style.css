@@ -45,6 +45,8 @@ body {
 
 .img-card {
     width: 100%;
+    max-height: 284px;
+    min-width: 284px;
 }
 
 .contenedor-parrafo {
@@ -71,6 +73,7 @@ body {
 .card {
     padding: 10px 0;
     position: relative;
+    min-height: 594px;
 }
 
 .stock {
@@ -270,7 +273,8 @@ body {
 
 .info-extra {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .cuotas {
@@ -283,7 +287,7 @@ body {
 }
 
 .cuotas svg {
-    width: 30%;
+    width: 20%;
 }
 
 .envio {
@@ -296,7 +300,7 @@ body {
 }
 
 .envio svg {
-    width: 30%;
+    width: 20%;
 }
 
 .cartas {
@@ -430,6 +434,8 @@ main .card:hover {
     /* box-shadow: 0 0 3px rgb(55, 247, 37), 0 0 6px rgb(230, 39, 230), 0 0 6px rgb(168, 66, 168), 0 0 30px white, 0 0 40px white, 0 0 100px rgb(190, 49, 255), 0 0 100px rgb(208, 84, 212); */
     transition: all 1s;
     cursor: pointer;
+    box-shadow: #363636;
+
 }
 
 
