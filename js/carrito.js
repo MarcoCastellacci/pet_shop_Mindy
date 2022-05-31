@@ -9,38 +9,37 @@ async function getAPI() {
 
     console.log(data);
 
-    let juguetes = data.response.filter(producto => producto.tipo == 'Juguete');
+    // let juguetes = data.response.filter(producto => producto.tipo == 'Juguete');
     let farmacia = data.response.filter(producto => producto.tipo == 'Medicamento');
     let tablaCarrito = document.getElementById('lista-carrito');
 
-    // let juguetes = [{
-    //         nombre: "Cuerda para morder",
-    //         precio: 350
-    //     },
-    //     {
-    //         nombre: "Frisbee de silicona",
-    //         precio: 320
-    //     }, {
-    //         nombre: "Frisbee de silicona",
-    //         precio: 320
-    //     }, {
-    //         nombre: "Frisbee de silicona",
-    //         precio: 320
-    //     }, {
-    //         nombre: "Frisbee de silicona",
-    //         precio: 320
-    //     }, {
-    //         nombre: "Frisbee de silicona",
-    //         precio: 320
-    //     }, {
-    //         nombre: "Cuerda para morder",
-    //         precio: 350
-    //     }
-    // ]
+    let juguetes = [{
+            nombre: "Cuerda para morder",
+            precio: 350
+        },
+        {
+            nombre: "Frisbee de silicona",
+            precio: 320
+        }, {
+            nombre: "Frisbee de silicona",
+            precio: 320
+        }, {
+            nombre: "Frisbee de silicona",
+            precio: 320
+        }, {
+            nombre: "Frisbee de silicona",
+            precio: 320
+        }, {
+            nombre: "Frisbee de silicona",
+            precio: 320
+        }, {
+            nombre: "Cuerda para morder",
+            precio: 350
+        }
+    ]
 
     function cantidadesParaCarrito(productosCarrito) {
-        let cantidad = {};
-
+        let cantidad = [];
         productosCarrito.forEach(producto => {
             if (!cantidad[producto.nombre]) {
                 cantidad[producto.nombre] = {
@@ -49,22 +48,25 @@ async function getAPI() {
                     precio: producto.precio,
                 };
             } else {
-                cantidad[producto].cantidad = cantidad[producto].cantidad + 1;
+                cantidad[producto.nombre].cantidad = cantidad[producto.nombre].cantidad + 1;
             }
 
         })
+
         return cantidad;
     }
-    cantidadesParaCarrito(juguetes)
-    console.log(cantidadesParaCarrito(juguetes));
+
+    let cantidad = cantidadesParaCarrito(juguetes)
+    console.log(cantidad);
 
     function mostrarCarrito(carritodecompras) {
         let html = "";
         carritodecompras.forEach(producto => {
+            let total = producto.cantidad * producto.precio;
             html += `
                     <tr>
                         <td>${producto.nombre}</td>
-                        <td>${producto.length}</td>
+                        <td>${producto.cantidad}</td>
                         <td>${producto.precio}</td>
                         <td>${total}</td>
                         <td>
@@ -79,7 +81,7 @@ async function getAPI() {
         });
         tablaCarrito.innerHTML = html;
     }
-    // mostrarCarrito()
+    mostrarCarrito(cantidad)
 
 
 }
