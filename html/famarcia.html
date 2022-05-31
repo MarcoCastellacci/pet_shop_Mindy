@@ -7,18 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
     <!-- css -->
     <link rel="stylesheet" href="../css/style.css">
     <title>Mindy-Farmacia</title>
 </head>
 
 <body>
-    <header class="bg-secondary">
-        <div class="container">
+    <header>
+        <div class="d-flex justify-content-between w-100 head">
+            <a href="../index.html"><img class="logo" src="../img/Logo Transparente.png" alt=""></a>
+            <div class="navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="bars"><i class="fa-solid fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../html/famarcia.html">Farmacia</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../html/juguetes.html">Jueguetes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../html/contacto.html">Contáctenos</a>
+                                </li>
 
-            <h1 class="text-center">HEADER</h1>
-
+                                <li class="nav-item">
+                                    <a class="nav-link"><button class="carrito" type="button"><i
+                                                class="fa-solid fa-cart-shopping"></i></button></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="search-bar">
+            <div class="perrito">
+                <img src="./img/Snauser.jpg" alt="">
+            </div>
+            <div class="buscador">
+                <input class="buscar-texto" type="search" placeholder="    Buscar por productos o categoria">
+                <i class="fa-solid fa-magnifying-glass m-3 lupa"></i>
+            </div>
         </div>
     </header>
 
@@ -38,164 +74,31 @@
         <div class="container py-5">
             <figure class="container row gap-3 d-flex justify-content-evenly" id="contenedor-farmacia">
 
-                <!-- <div class="card col-4" style="width: 18rem;">               
-                    <a href="detalles.html">
-                        <img class="img-card"  
-                            src="https://puppis.vteximg.com.br/arquivos/ids/167383-1000-1000/366255.jpg?v=637014017122630000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Antipulgas Y Garrapatas Bravecto Para Perros</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Producto especializado para perros de pequeños. Uso veterinario.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$1650</p>
-                            <p class="card-text m-0">6 cuotas sin interes de $275</p>
-                            <a href="carrito.html" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card col-4" style="width: 18rem;">
-                    <a href="detalles.html">
-                        <img class="img-card"
-                            src="https://puppis.vteximg.com.br/arquivos/ids/159614-1000-1000/382117.jpg?v=636211162343630000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Antiparasitario Interno Total Full CG Perros - 15 Cc</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Antiparasitario interno en suspensión oral, contiene Fenbendazol y Toltrazuril. Uso veterinario.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$1650</p>
-                            <p class="card-text m-0">6 cuotas sin interes de $275</p>
-                            <a href="carrito.html" class="btn btn-primary mt-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card col-4" style="width: 18rem;">
-                    <a href="detalles.html">
-                        <img class="img-card"
-                            src="https://puppis.vteximg.com.br/arquivos/ids/170176-1000-1000/373019.png?v=637142631469200000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">FRONTLINE Spray - 100 ml</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Antiparasitario externo. Es un producto de gran eficacia para controlar pulgas, garrapatas y piojos en perros y gatos.
-                        Desde los dos días de edad. Contiene Fipronil.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$350</p>
-                            <a href="carrito.html" class="btn btn-primary mt-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card col-4" style="width: 18rem;">
-                    <a href="detalles.html">
-                        <img class="img-card"
-                            src="https://puppis.vteximg.com.br/arquivos/ids/167371-1000-1000/382117.jpg?v=637014017065900000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Total Full Cachorro Suspension - 15 Cc</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Antiparasitario interno en suspensión oral. Estuche con frasco con 15 ml y jeringa dosificadora. Contiene Fenbendazol y
-                        Pirantel.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$350</p>
-                            <a href="carrito.html" class="btn btn-primary mt-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card col-4" style="width: 18rem;">
-                    <a href="detalles.html">
-                        <img class="img-card"
-                            src="https://puppis.vteximg.com.br/arquivos/ids/165944-1000-1000/381007.png?v=636850693330070000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Comfortis Tableta 560 Mg - 9-18 Kg</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Comfortis con spinosad de Elanco Lilly es una tableta via oral con sabor a carne que mata las pulgas de su perro.
-                        Proporciona un mes completo de protección de la pulga para ayudar a prevenir futuras infestaciones de pulgas.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$610</p>
-                            <a href="carrito.html" class="btn btn-primary mt-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card col-4" style="width: 18rem;">
-                    <a href="detalles.html">
-                        <img class="img-card"
-                            src="https://puppis.vteximg.com.br/arquivos/ids/157833-1000-1000/Power-Ultra.jpg?v=635852684254630000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Power Ultra ( 1 Pipeta )</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Power Ultra Pipeta controla y previene la infestación por pulgas y garrapatas en la mascota. Mata en forma instantánea
-                        pulgas y garrapatas, protegiendo a su mascota por 30 días. Corta el ciclo de pulgas eliminándolas antes de que se
-                        reproduzcan.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$450</p>
-                            <a href="carrito.html" class="btn btn-primary mt-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card col-4" style="width: 18rem;">               
-                    <a href="detalles.html">
-                        <img class="img-card"  
-                            src="https://puppis.vteximg.com.br/arquivos/ids/165646-1000-1000/332002.png?v=636764253250970000">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Collar Antipulgas Ecthol Para Perros - 63 Cm</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Collar con antiparasitario externo para el control de pulgas y garrapatas. Antiparasitario externo a base de
-                        Clorpirifos, organofosforado que actúa por tensión de vapor con acción larvicida y adulticida</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$1650</p>
-                            <p class="card-text m-0">6 cuotas sin interes de $275</p>
-                            <a href="carrito.html" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card col-4" style="width: 18rem;">
-                    <a href="detalles.html">
-                        <img class="img-card"
-                            src="http://d3ugyf2ht6aenh.cloudfront.net/stores/001/142/477/products/531-7f2769394edc84f72015962252726641-640-0.png">
-                    </a>
-                
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Pipeta OSSPRET</h5>
-                        <p class="card-text contenedor-parrafo" style="margin-top: auto;">Pipeta OSSPRET pulguicida, garrapaticida, repele moscas y mosquitos. Para perros de 2 a 10kg. OSSPRET, especialidades
-                        veterinarias.</p>
-                
-                        <div class="text-center" style="margin-top: auto;">
-                            <p class="card-text mb-1">$1650</p>
-                            <p class="card-text m-0">6 cuotas sin interes de $275</p>
-                            <a href="carrito.html" class="btn btn-primary mt-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div> -->
-
             </figure>
+        </div>
+        <div class="botonAtas">
+            <a href="javascript: history.go(-1)">Volver Atrás</a>
         </div>
     </main>
 
 
 
-    <footer class="bg-secondary">
-        <div class="container">
-
-            <h1 class="text-center">FOOTER</h1>
-
+    <footer>
+        <div class="redes">
+            <button class="icon-redes"><i class="fa-brands fa-instagram"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-facebook"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-twitter"></i></button>
+        </div>
+        <div class="footer-datos">
+            <nav class="nav-footer">
+                <a href="">Sobre Mindy</a>
+                <a href="">Productos</a>
+                <a href="">Contacto</a>
+                <a href="">Ayuda</a>
+                <a href="">Legales</a>
+            </nav>
+            <p>© 2022 – Grupo 8 - Alumnos Cohort 28</p>
         </div>
     </footer>
 

@@ -133,6 +133,14 @@ body {
     width: 40%;
 }
 
+.buscador-texto {
+    display: flex;
+    align-items: center;
+    margin: 2rem auto;
+    margin-top: 1rem;
+    width: 40%;
+}
+
 .buscar-texto {
     width: 100%;
     ;
@@ -197,6 +205,46 @@ body {
     padding: 1rem;
 }
 
+.botones-cat {
+    display: flex;
+    justify-content: center;
+}
+
+.boton-juguete {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+}
+
+.boton-farma {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+}
+
+.foto-juguete {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.foto-farma {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.texto-cat {
+    font-size: 1.5rem;
+    padding: .8rem;
+}
+
 .info-extra {
     display: flex;
     justify-content: space-evenly;
@@ -228,17 +276,19 @@ body {
     width: 30%;
 }
 
-.cartas {
+
+/* .cartas {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-}
+    margin-top: 5rem;
+} */
 
 .card {
     width: 20vw;
     margin: 1rem;
     border-radius: 10px;
-    background-color: #c9e265;
+    background-color: #e2dfdf;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -254,7 +304,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin: 4rem auto;
 }
 
 
@@ -343,21 +393,89 @@ h2 {
     border-right: 0.2em solid green;
 }
 
+#cardsyenvio {
+    display: flex;
+    flex-direction: column;
+}
+
 .cartas {
+    display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    background-image: url(../img/wave.svg);
+    background-repeat: no-repeat;
 }
 
 .card {
     margin: 0.5em;
-    border: 0.1em outset black;
-    border-radius: 0 0 1em 1em;
+    border: 0.1em outset #c9e265;
+    border-radius: 1em;
+}
+
+.cajaEnvio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.card img {
+    height: 25vh;
+    object-fit: cover;
 }
 
 main .card:hover {
-    box-shadow: 0 0 3px rgb(55, 247, 37), 0 0 6px rgb(230, 39, 230), 0 0 6px rgb(168, 66, 168), 0 0 30px white, 0 0 40px white, 0 0 100px rgb(190, 49, 255), 0 0 100px rgb(208, 84, 212);
-    transition: all 1s;
+    box-shadow: 0 0 3px rgb(55, 247, 37), 0 0 6px #7ed957, 0 0 6px #819c75, 0 0 30px white, 0 0 40px white, 0 0 100px, 0 0 100px #7ed957;
+    transition: box-shadow 1s;
     cursor: pointer;
+}
+
+#main-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-contacto h1 {
+    margin: 0.5em;
+}
+
+.contenedorForm {
+    width: 50vw;
+    height: 80vh;
+    margin-bottom: 3em;
+}
+
+.contenedorForm input,
+.contenedorForm textarea {
+    border: 0.1em solid #eea435;
+}
+
+form input:hover {
+    border: 0.1em solid black;
+}
+
+.botonAtras {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0.5em;
+}
+
+.botonAtras a {
+    width: 9vw;
+    border-radius: 1em;
+    border: 0.1em solid black;
+    color: black;
+    background-color: var(--color-verde-claro);
+    text-decoration: none;
+    text-align: center;
+}
+
+.botonAtras a:hover {
+    background-color: var(--color-verde);
 }
 
 
@@ -392,9 +510,6 @@ main .card:hover {
         margin: 2rem auto;
         width: 60%;
     }
-}
-
-@media (max-width: 991px) {
     .nav-footer a {
         font-size: 1rem;
     }
@@ -403,5 +518,20 @@ main .card:hover {
     }
     .icon-redes {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 730px) {
+    .foto-juguete {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .foto-farma {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
     }
 }

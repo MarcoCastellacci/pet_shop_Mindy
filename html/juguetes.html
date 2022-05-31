@@ -15,11 +15,48 @@
 </head>
 
 <body>
-    <header class="bg-secondary">
-        <div class="container">
+    <header>
+        <div class="d-flex justify-content-between w-100 head">
+            <a href="../index.html"><img class="logo" src="../img/Logo Transparente.png" alt=""></a>
+            <div class="navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="bars"><i class="fa-solid fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../html/famarcia.html">Farmacia</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../html/juguetes.html">Jueguetes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../html/contacto.html">Contáctenos</a>
+                                </li>
 
-            <h1 class="text-center">HEADER</h1>
-
+                                <li class="nav-item">
+                                    <a class="nav-link"><button class="carrito" type="button"><i
+                                                class="fa-solid fa-cart-shopping"></i></button></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="search-bar">
+            <div class="perrito">
+                <img src="./img/Snauser.jpg" alt="">
+            </div>
+            <div class="buscador">
+                <input class="buscar-texto" type="search" placeholder="    Buscar por productos o categoria">
+                <i class="fa-solid fa-magnifying-glass m-3 lupa"></i>
+            </div>
         </div>
     </header>
 
@@ -62,13 +99,27 @@
 
             </figure>
         </div>
+        <div class="botonAtras">
+            <a href="javascript: history.go(-1)">Volver Atrás</a>
+        </div>
     </main>
 
-    <footer class="bg-secondary">
-        <div class="container">
-
-            <h1 class="text-center">FOOTER</h1>
-
+    <footer>
+        <div class="redes">
+            <button class="icon-redes"><i class="fa-brands fa-instagram"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-facebook"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="icon-redes"><i class="fa-brands fa-twitter"></i></button>
+        </div>
+        <div class="footer-datos">
+            <nav class="nav-footer">
+                <a href="">Sobre Mindy</a>
+                <a href="">Productos</a>
+                <a href="">Contacto</a>
+                <a href="">Ayuda</a>
+                <a href="">Legales</a>
+            </nav>
+            <p>© 2022 – Grupo 8 - Alumnos Cohort 28</p>
         </div>
     </footer>
     <!-- bootstrap -->
@@ -76,6 +127,7 @@
     <!-- js -->
     <script src="../js/main.js"></script>
     <script src="../js/juguete.js"></script>
+
 
 </body>
 
