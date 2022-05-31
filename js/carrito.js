@@ -7,10 +7,6 @@ async function getAPI() {
         .then(json => data = json)
         .catch(error => console.error(error));
 
-    console.log(data);
-
-    // let juguetes = data.response.filter(producto => producto.tipo == 'Juguete');
-    let farmacia = data.response.filter(producto => producto.tipo == 'Medicamento');
     let tablaCarrito = document.getElementById('lista-carrito');
 
     let juguetes = [{
@@ -50,9 +46,7 @@ async function getAPI() {
             } else {
                 cantidad[producto.nombre].cantidad = cantidad[producto.nombre].cantidad + 1;
             }
-
         })
-
         return cantidad;
     }
 
@@ -60,15 +54,17 @@ async function getAPI() {
     console.log(cantidad);
 
     function mostrarCarrito(carritodecompras) {
+        console.log(carritodecompras);
         let html = "";
         carritodecompras.forEach(producto => {
-            let total = producto.cantidad * producto.precio;
+            let totalPorProducto = producto.cantidad * producto.precio;
+            console.log(carritodecompras);
             html += `
                     <tr>
                         <td>${producto.nombre}</td>
                         <td>${producto.cantidad}</td>
                         <td>${producto.precio}</td>
-                        <td>${total}</td>
+                        <td>${totalPorProducto}</td>
                         <td>
                             <button class="btn btn-danger eliminar" onclick="eliminar(${producto.id})">Eliminar
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="trash bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -78,11 +74,25 @@ async function getAPI() {
                         </td>
                     </tr>
                 `;
+
         });
         tablaCarrito.innerHTML = html;
+
     }
     mostrarCarrito(cantidad)
 
-
+    function mostrarTotales(carritodecompras) {
+        let total = 0;
+        let html = "";
+        carritodecompras.forEach(producto => {
+            let totalPorProducto = producto.cantidad * producto.precio;
+            total += totalPorProducto;
+            html += `
+                <p>${totalPorProducto}</p>
+            `;
+        })
+        document.getElementById('total').innerHTML = html;
+    }
+    mostrarTotales(cantidad)
 }
 getAPI()
