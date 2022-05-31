@@ -43,7 +43,7 @@ async function getAPI() {
 
         productosCarrito.forEach(producto => {
             if (!cantidad[producto.nombre]) {
-                cantidad[producto] = {
+                cantidad[producto.nombre] = {
                     cantidad: 1,
                     nombre: producto.nombre,
                     precio: producto.precio,
