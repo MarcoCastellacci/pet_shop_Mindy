@@ -197,17 +197,46 @@ body {
     padding: 1rem;
 }
 
-.cont-categorias {
-    width: 80%;
+.botones-cat {
     display: flex;
+    justify-content: center;
 }
 
-.cat-farma {
-    /* font-size: 6rem; */
+.boton-juguete {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+
 }
 
-.cat-juguete {
-    font-size: 6rem;
+.boton-farma {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+
+}
+
+.foto-juguete {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.foto-farma {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.texto-cat {
+    font-size: 1.5rem;
+    padding: .8rem;
 }
 
 .info-extra {
@@ -245,13 +274,14 @@ body {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    margin-top: 5rem;
 }
 
 .card {
     width: 20vw;
     margin: 1rem;
     border-radius: 10px;
-    background-color: rgb(241, 229, 164);
+    background-color: #e2dfdf;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -267,7 +297,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin: 4rem auto;
 }
 
 

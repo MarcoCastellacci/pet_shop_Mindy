@@ -11,24 +11,67 @@ async function getAPI() {
 
             const contenedorProductos = document.querySelector('.productos');
 
+            let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
+
+            const contenedorFarmacia = document.querySelector('.productos');
 
 
-            printCard(producto, contenedorProductos);
+            let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
 
-            // console.log(categorias) 
-            // let categoria = new Set(categorias);
-            // let categ = Array.from(categoria);
+            const contenedorJuguetes = document.querySelector('.productos');
 
-            // console.log(categ);
-            // let contenedorCategorias = document.querySelector(".cont-categorias");
 
-            // function imprimirCategorias(array) {
-            //     let filtro = "";
-            //     array.forEach(categoria => {
-            //         filtro += `<button>${categoria}</button>`
-            //         contenedorCategorias.innerHTML = filtro;
-            //     })
-            // }
-            // imprimirCategorias(categ)
+            // printCard(juguetes, contenedorJuguetes);
+            // printCard(farmacia, contenedorFarmacia);
+
+            // printCard(producto, contenedorProductos);
+
+            let botonJuguete = document.querySelector(".boton-juguete");
+            let botonFarma = document.querySelector(".boton-farma");
+            let buscador = document.querySelector(".buscar-texto");
+
+            let texto = "";
+
+            buscador.addEventListener("keyup", (e) => {
+                    texto = e.target.value;
+                    mostarFiltro();
+            })
+
+            let filtroCategoria = [];
+            botonJuguete.addEventListener("click", (e) => {
+                if (e.target) {
+                    filtroCategoria.push(e.target.id)
+                    console.log(filtroCategoria);
+                    mostarFiltro();
+                }
+            })
+            botonFarma.addEventListener("click", (e) => {
+                if (e.target) {
+                    filtroCategoria.push(e.target.id)
+                    console.log(filtroCategoria);
+                    mostarFiltro();
+                }
+            })
+
+            function mostarFiltro() {
+                let filtro = [];
+                let ultimoElem = filtroCategoria.length - 1;
+                if (filtroCategoria[ultimoElem] == "Medicamento" && texto != "") {
+                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                } else if (filtroCategoria[ultimoElem] == "Medicamento" && texto == "") {
+                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                } else if (filtroCategoria.includes("Juguete") && texto != "") {
+                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                } else if(filtroCategoria.includes("Juguete") && texto == "") {
+                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                } else if (filtro.length == 0 && texto != "") {
+                    filtro.push(...productos.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))))
+                }  else if (filtro.length == 0) {
+                    filtro.push(...productos);
+                }
+                console.log(filtro)
+                printCard(filtro, contenedorProductos);
+            }
+            mostarFiltro()
         })
 }
