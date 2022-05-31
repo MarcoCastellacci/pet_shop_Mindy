@@ -1,3 +1,8 @@
+const contenedorJuguetes = document.querySelector('#contenedor-juguetes');
+const contenedorFarmacia = document.querySelector('#contenedor-farmacia');
+const cuerpoCarrito = document.querySelector('#lista-carrito');
+
+
 getAPI();
 async function getAPI() {
     await fetch('https://apipetshop.herokuapp.com/api/articulos')
@@ -7,32 +12,27 @@ async function getAPI() {
             const productos = data.response;
 
 
-            // if (contenedorFarmacia) {
+            if (contenedorFarmacia) {
 
-            //     let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
+                let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
 
-            //     printCard(farmacia, contenedorFarmacia);
+                printCard(farmacia, contenedorFarmacia);
 
-            //     eventoAgregarProducto(farmacia, productos, carrito);
-
-
-            // } else if (contenedorJuguetes) {
-
-            //     let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
-
-            //     printCard(juguetes, contenedorJuguetes);
-            //     // ---------------------------------------------
-            //     eventoAgregarProducto(juguetes, productos, carrito);
+                // eventoAgregarProducto(farmacia, productos, carrito);
 
 
-            //     // --------------------------------------------------
-            // } else if (cuerpoCarrito) {
+            } else if (contenedorJuguetes) {
 
-            //     console.log('estoy en el carrito');
-            //     getLocalStorage();
-            // } else {
-            //     console.log('no encontramos resultados');
-            // }
+                let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
+
+                printCard(juguetes, contenedorJuguetes);
+                // eventoAgregarProducto(juguetes, productos, carrito);
+
+                
+            } else {
+                console.log('estoy en el carrito');
+                
+            }
 
 
             
@@ -53,7 +53,7 @@ function printCard(array, node) {
     array.forEach(producto => {
 
         node.innerHTML += `
-                        <div class="card col-4" style="width: 18rem;">
+                        <div class="card card-contenedora col-4" style="width: 18rem;">
                             <span class="stock">ultimas unidades</span>              
                             <a href="detalles.html?id=${producto._id}">
                                 <img class="img-card"  
@@ -90,4 +90,9 @@ async function addCarrito(id) {
     console.log(arrayCarrito);
 }
 
+function filtros() {
 
+    let data = [];
+
+
+}
