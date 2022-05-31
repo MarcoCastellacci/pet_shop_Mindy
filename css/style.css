@@ -380,9 +380,6 @@ h2 {
         margin: 2rem auto;
         width: 60%;
     }
-}
-
-@media (max-width: 991px) {
     .nav-footer a {
         font-size: 1rem;
     }
@@ -391,5 +388,21 @@ h2 {
     }
     .icon-redes {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 730px) {
+    .foto-juguete {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .foto-farma {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
     }
 }
