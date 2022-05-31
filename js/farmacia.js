@@ -8,8 +8,13 @@ async function getAPI() {
 
             let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
 
-            const contenedorFarmacia = document.querySelector('#contenedor-farmacia');
-
             printCard(farmacia, contenedorFarmacia);
+
+            
         })
 }
+
+// let arrayCarrito = [];
+// contenedorFarmacia.addEventListener('click', (e) => {
+//     agregarProducto(e, arrayCarrito)
+// });
