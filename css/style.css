@@ -538,6 +538,20 @@ form input:hover {
     background-color: var(--color-verde);
 }
 
+.mapa {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5em;
+    margin-top: 1em;
+    height: 70vh;
+}
+
+.mapa span {
+    margin-bottom: 0.5em;
+}
+
 
 /* Media Querys */
 
