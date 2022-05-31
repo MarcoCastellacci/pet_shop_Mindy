@@ -109,21 +109,7 @@ function printCard(array, node) {
                                 </div>
                             </div>
                         </div>`
-
-        
-        // let boton = document.getElementById(`btn5f205432bf2ede0017e48508`);
-
-        // console.log(boton);
-
-        // boton.addEventListener('click', agregarProducto)
-        // agregarEvento(boton, producto._id);
-
-        // boton.addEventListener('click', () => {
-        //     // agregarProducto( producto._id )
-        //     console.log(`btn${producto._id}`);
-        // })
     })
-
 }
 
 /**
@@ -142,6 +128,14 @@ function agregarProducto(arrayProductos, idProducto, arrayCarrito) {
     // console.log(nombre);
     // console.log(_id);
     // console.log(producto);
+
+    //------------------------------------
+    // if ( localStorage.getItem('array-carrito') ) {
+    //     arrayCarrito.push()
+    // }
+
+    //------------------------------------
+
     arrayCarrito.push(objetoProducto);
 
     // printCarrito(objetoProducto, cuerpoCarrito);
@@ -205,6 +199,12 @@ function eliminarProductoCarrito(id) {
 
 }
 
+/**
+ * 
+ * @param {juguetes o farmacia} arrayProductosFiltrados 
+ * @param {todos mis productos} arrayTodosMisProductos 
+ * @param {array carrto} arrayCarrito 
+ */
 function eventoAgregarProducto(arrayProductosFiltrados, arrayTodosMisProductos, arrayCarrito) {
 
     arrayProductosFiltrados.forEach(producto => {
@@ -214,7 +214,7 @@ function eventoAgregarProducto(arrayProductosFiltrados, arrayTodosMisProductos, 
         boton.addEventListener('click', (e) => {
 
             let idProducto = e.target.id.split('btn').join('');
-
+            console.log(idProducto);
             agregarProducto(arrayTodosMisProductos, idProducto, arrayCarrito);
 
             localStorage.setItem('array-carrito', JSON.stringify( carrito ));
@@ -226,7 +226,9 @@ function eventoAgregarProducto(arrayProductosFiltrados, arrayTodosMisProductos, 
 
 }
 
-
+/**
+ * 
+ */
 function getLocalStorage() {
     // location.reload();
 
@@ -238,6 +240,7 @@ function getLocalStorage() {
         // console.log(carritoProductos);
         // printCarrito(carritoProductos, cuerpoCarrito);
         console.log(carritoProductos);
+        carrito.push(...carritoProductos);
         // return carritoProductos;
 
     } else {
@@ -245,7 +248,6 @@ function getLocalStorage() {
     }
 
 }
-
 
 
 
