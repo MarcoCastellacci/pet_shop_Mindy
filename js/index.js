@@ -4,6 +4,7 @@ async function getAPI() {
         .then(res => res.json())
         .then(data => {
             const productos = data.response;
+            let productosMasVendidos = productos.filter(producto => producto.stock <= 5)
 
             let contenedorProductos = document.querySelector('.productos');
             let botonJuguete = document.querySelector(".boton-juguete");
@@ -36,17 +37,17 @@ async function getAPI() {
                 let filtro = [];
                 let ultimoElem = filtroCategoria.length - 1;
                 if (filtroCategoria[ultimoElem] == "Medicamento" && texto != "") {
-                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                    filtro.push(...productosMasVendidos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
                 } else if (filtroCategoria[ultimoElem] == "Medicamento" && texto == "") {
-                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                    filtro.push(...productosMasVendidos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
                 } else if (filtroCategoria.includes("Juguete") && texto != "") {
-                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                    filtro.push(...productosMasVendidos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
                 } else if (filtroCategoria.includes("Juguete") && texto == "") {
-                    filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
+                    filtro.push(...productosMasVendidos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
                 } else if (filtro.length == 0 && texto != "") {
-                    filtro.push(...productos.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))))
+                    filtro.push(...productosMasVendidos.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))))
                 } else if (filtro.length == 0) {
-                    filtro.push(...productos);
+                    filtro.push(...productosMasVendidos);
                 }
                 console.log(filtro)
                 printCard(filtro, contenedorProductos);
