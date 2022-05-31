@@ -1,6 +1,7 @@
 /* Tomy Aybar - Toys and Pharmacy */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@mport url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -22,8 +23,30 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.h2-filtro {
+    margin: 5rem auto;
+}
+
+.barra-categoria {
+    background-color: #363636;
+}
+
+.barra-categoria h2 {
+    color: #e2dfdf;
+    padding: 1rem;
+}
+
+.foto-carusel {
+    margin: auto;
+    width: 50%;
+    height: 70vh;
+    object-fit: cover;
+}
+
 .img-card {
     width: 100%;
+    max-height: 284px;
+    min-width: 284px;
 }
 
 .contenedor-parrafo {
@@ -50,6 +73,7 @@ body {
 .card {
     padding: 10px 0;
     position: relative;
+    min-height: 594px;
 }
 
 .stock {
@@ -83,8 +107,10 @@ body {
     background-color: gray;
 } */
 
-.navbar {
-    width: 50%;
+.navbar-container {
+    width: fit-content;
+    /* float: right; */
+
 }
 
 .carrito {
@@ -122,7 +148,6 @@ body {
 .navbar-nav {
     display: flex;
     align-items: center;
-    /* margin: 1rem; */
 }
 
 .buscador {
@@ -143,10 +168,10 @@ body {
 
 .buscar-texto {
     width: 100%;
-    ;
     border-radius: 20px;
     border-color: #363636;
     height: 2rem;
+    padding-left: 1rem;
 }
 
 .lupa {
@@ -167,7 +192,8 @@ body {
 }
 
 .perrito img {
-    width: 20%;
+    width: 19%;
+    ;
 }
 
 .redes {
@@ -227,15 +253,15 @@ body {
 }
 
 .foto-juguete {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .foto-farma {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -247,7 +273,8 @@ body {
 
 .info-extra {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .cuotas {
@@ -260,7 +287,7 @@ body {
 }
 
 .cuotas svg {
-    width: 30%;
+    width: 20%;
 }
 
 .envio {
@@ -273,7 +300,7 @@ body {
 }
 
 .envio svg {
-    width: 30%;
+    width: 20%;
 }
 
 .cartas {
@@ -355,16 +382,109 @@ h2 {
 }
 
 
+/* main-Mayra */
+
+.carrousel {
+    width: 100%;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.infoExtra {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.infoExtra div {
+    width: 25vw;
+    height: fit-content;
+    border: 0.1em solid black;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+·filtros div {
+    width: fit-content;
+    background-color: gray;
+    border-right: 0.2em solid green;
+}
+
+.cartas {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    margin: 0.5em;
+    border: 0.1em outset black;
+    border-radius: 0 0 1em 1em;
+}
+
+main .card:hover {
+    /* box-shadow: 0 0 3px rgb(55, 247, 37), 0 0 6px rgb(230, 39, 230), 0 0 6px rgb(168, 66, 168), 0 0 30px white, 0 0 40px white, 0 0 100px rgb(190, 49, 255), 0 0 100px rgb(208, 84, 212); */
+    transition: all 1s;
+    cursor: pointer;
+    box-shadow: #363636;
+
+}
+#main-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-contacto h1 {
+    margin: 0.5em;
+}
+
+.contenedorForm {
+    width: 50vw;
+    height: 80vh;
+    margin: auto auto 3em auto;
+}
+
+.contenedorForm input,
+.contenedorForm textarea {
+    border: 0.1em solid #eea435;
+}
+
+form input:hover {
+    border: 0.1em solid black;
+}
+
+.boton-contacto {
+    background-color: #eea435;
+    border-radius: 10%;
+    padding: .5rem 1rem;
+    display: flex;
+    margin: auto;
+}
+
+
+
 /* Media Querys */
 
 @media (max-width: 991px) {
     .logo {
         width: 25vw;
     }
+
     .bars {
         color: black;
         font-size: 2rem;
     }
+
     .carrito {
         width: 5vw;
         height: 4rem;
@@ -373,6 +493,7 @@ h2 {
         border: none;
         color: #363636;
     }
+
     .nav-link {
         font-size: 1.2rem;
         color: black;
@@ -380,20 +501,27 @@ h2 {
         text-align: center;
         margin: .7rem;
     }
+
     .buscador {
         display: flex;
         align-items: center;
-        margin: 2rem auto;
         width: 60%;
     }
+
     .nav-footer a {
         font-size: 1rem;
     }
+
     .footer-datos p {
         font-size: small;
     }
+
     .icon-redes {
         font-size: 2rem;
+    }
+    .perrito img {
+        width: 26%;
+        ;
     }
 }
 
@@ -404,10 +532,51 @@ h2 {
         border-radius: 50%;
         object-fit: cover;
     }
+
     .foto-farma {
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
         object-fit: cover;
     }
+    .perrito img {
+        width: 50%;
+        ;
+    }
+}
+
+@media (max-width: 840px) {
+    .perrito img {
+        width: 30%;
+        ;
+    }
+}
+
+@media (max-width: 680px) {
+    .perrito img {
+        width: 40%;
+        ;
+    }
+}
+
+/* @media (max-width: 612px) {
+    .perrito img {
+        width: 30%;
+        ;
+    }
+} */
+
+@media (max-width: 600px) {
+    .perrito img {
+        width: 50%;
+        ;
+    }
+    .buscador {
+        /* display: flex;
+        align-items: center;
+        margin: 2rem auto;
+        margin-top: -2.7rem; */
+        width: 75%;
+    }
+
 }
