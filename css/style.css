@@ -345,10 +345,6 @@ body {
     background-color: #f2f2f2;
 }
 
-.carrito-list {
-    margin-bottom: 2rem;
-}
-
 input[type="number"] {
     width: 3rem;
     text-align: center;
@@ -361,6 +357,10 @@ input[type="number"] {
 .trash {
     height: 1.3rem;
     margin-bottom: .2rem;
+}
+
+.carrito-list {
+    margin-bottom: 2rem;
 }
 
 th {
@@ -536,7 +536,9 @@ form input:hover {
 
 .botonAtras a:hover {
     background-color: var(--color-verde);
-}.texto-cat {
+}
+
+.texto-cat {
     text-align: center;
 }
 
@@ -552,6 +554,63 @@ form input:hover {
 
 .mapa span {
     margin-bottom: 0.5em;
+}
+
+.carritoCompras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#mediosPago {
+    display: flex;
+    width: 30vw;
+}
+
+.tarjetasCredito {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjetasCredito img {
+    width: 8vw;
+    height: 15vh;
+    margin: 0.2em;
+    align-items: center;
+}
+
+.comprarShoplist {
+    display: flex;
+    justify-content: center;
+}
+
+.comprarShoplist .btn {
+    align-items: flex-end;
+    margin-top: 30%;
+    width: 25vw;
+    background-color: rgb(1, 93, 146);
+}
+
+.seguirComprando {
+    margin: 1.5em;
+}
+
+.seguirComprando a {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 0.5em;
+    border: 0.1em solid black;
+    padding: 0.5em;
+    text-decoration: none;
+    margin: 1em;
+}
+
+.seguirComprando a:hover {
+    background-color: rgb(1, 93, 146);
+    color: white;
 }
 
 
@@ -596,7 +655,6 @@ form input:hover {
     }
     .perrito img {
         width: 26%;
-        ;
     }
 }
 
