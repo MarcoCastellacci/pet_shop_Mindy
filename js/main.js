@@ -1,4 +1,3 @@
-
 const contenedorJuguetes = document.querySelector('#contenedor-juguetes');
 const contenedorFarmacia = document.querySelector('#contenedor-farmacia');
 const cuerpoCarrito = document.querySelector('#lista-carrito');
@@ -45,23 +44,24 @@ node.innerHTML += `
     })
 }
 let idEncontrado = [];
+
 function agregarProducto(idProducto) {
-    
+
     idEncontrado.push(idProducto)
 
     console.log(idEncontrado);
 
-    
+
 }
 
 
 
-function buscarProductos (arrayID, arrayProductos) {
+function buscarProductos(arrayID, arrayProductos) {
 
     let arrayResultado = [];
 
     arrayID.map(id => {
-        arrayResultado.push(... arrayProductos.filter(producto => producto._id == id))
+        arrayResultado.push(...arrayProductos.filter(producto => producto._id == id))
     })
 
     console.log(arrayResultado);
