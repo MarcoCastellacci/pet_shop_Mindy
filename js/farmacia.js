@@ -1,6 +1,6 @@
 getAPI()
-function getAPI() {
-    fetch('https://apipetshop.herokuapp.com/api/articulos')
+async function getAPI() {
+    await fetch('https://apipetshop.herokuapp.com/api/articulos')
         .then(res => res.json())
         .then(data => {
 
