@@ -216,7 +216,6 @@ body {
     background-color: transparent;
     border: none;
     margin: 1rem;
-
 }
 
 .boton-farma {
@@ -225,7 +224,6 @@ body {
     background-color: transparent;
     border: none;
     margin: 1rem;
-
 }
 
 .foto-juguete {
@@ -406,7 +404,6 @@ h2 {
         border-radius: 50%;
         object-fit: cover;
     }
-    
     .foto-farma {
         width: 10rem;
         height: 10rem;
