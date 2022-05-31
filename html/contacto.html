@@ -13,9 +13,9 @@
 
 <body>
     <header>
-        <div class="d-flex justify-content-between w-100 head">
-            <a href="../index.html"><img class="logo" src="../img/Logo Transparente.png" alt=""></a>
-            <div class="navbar">
+        <div class="d-flex justify-content-between align-items-center w-100 head">
+            <img class="logo" src="../img/Logo Transparente.png" alt="">
+            <div class="navbar-container">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,28 +30,25 @@
                                     <a class="nav-link" aria-current="page" href="../html/famarcia.html">Farmacia</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../html/juguetes.html">Jueguetes</a>
+                                    <a class="nav-link" aria-current="page" href="./famarcia.html">Farmacia</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Contáctenos</a>
+                                    <a class="nav-link" href="./juguetes.html">Jueguetes</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link"><button class="carrito" type="button"><i class="fa-solid fa-cart-shopping"></i></button></a>
+                                    <a class="nav-link" href="./contacto.html">Contáctenos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"><button class="carrito" type="button"><i
+                                                class="fa-solid fa-cart-shopping"></i></button></a>
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </nav>
             </div>
-
         </div>
-        <div class="buscador">
-            <input class="buscar-texto" type="search" placeholder="Buscar por productos o categoria">
-            <i class="fa-solid fa-magnifying-glass m-3 lupa"></i>
-        </div>
-
     </header>
 
 
@@ -70,9 +67,9 @@
                 </div>
                 <label for="mascota" class="form-label">Indica tu mascota:
 
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="checkPerro" >
-            <label class="form-check-label" for="checkPerro">Perro</label>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkPerro">
+                        <label class="form-check-label" for="checkPerro">Perro</label>
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="checkGato">
@@ -88,13 +85,16 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
         </div>
+        <button id="finalizar" type="submit" class="boton-contacto">Submit</button>
+        <div id="imprimir"></div>
+        </form>
+        </div>
 
         <button id="finalizar" type="submit" class="btn btn-primary">Submit</button>
         <div id="imprimir"></div>
         </form>
         </div>
     </main>
-
     <footer>
         <div class="redes">
             <button class="icon-redes"><i class="fa-brands fa-instagram"></i></button>
@@ -110,9 +110,8 @@
                 <a href="">Ayuda</a>
                 <a href="">Legales</a>
             </nav>
-            <p>© 2022 – Grupo 8 - Alumnos Cohort 28</p>
+            <p>© 2021 – Grupo 8 - Alumnos Cohort 28</p>
         </div>
-
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/contacto.js"></script>
