@@ -610,9 +610,15 @@ form input:hover {
 
 /* Media Querys */
 
-@media (max-width: 991px) {
+@media (max-width: 980px) {
     .logo {
         width: 25vw;
+    }
+    .contenedorForm {
+        width: 70%;
+    }
+    .mapa {
+        margin-top: -8rem;
     }
     .bars {
         color: black;
@@ -697,6 +703,12 @@ form input:hover {
     .perrito img {
         width: 50%;
         ;
+    }
+    .contenedorForm {
+        width: 100%;
+    }
+    .mapa {
+        margin-top: -8rem;
     }
     .buscador {
         /* display: flex;
