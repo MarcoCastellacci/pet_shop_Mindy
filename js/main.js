@@ -138,11 +138,13 @@ function agregarProducto(arrayProductos, idProducto, arrayCarrito) {
 
     const {nombre, _id, precio, imagen, stock} = producto;
 
-    console.log(nombre);
-    console.log(_id);
-    console.log(producto);
-    arrayCarrito.push(producto);
+    let objetoProducto = { nombre, id:_id, precio, imagen, stock, cantidad: 1}
+    // console.log(nombre);
+    // console.log(_id);
+    // console.log(producto);
+    arrayCarrito.push(objetoProducto);
 
+    // printCarrito(objetoProducto, cuerpoCarrito);
     console.log(arrayCarrito);
     
 }
@@ -150,31 +152,31 @@ function agregarProducto(arrayProductos, idProducto, arrayCarrito) {
 
 /**
  * 
- * @param {array del carrito} array 
+ * @param {array del carrito} objeto 
  * @param {nodo donde se van a imprimir los productos} node 
  */
-function printCarrito(array, node) {
+function printCarrito(objeto, node) {
 
     let fila = document.createElement('tr');
 
     fila.innerHTML += `
         <td>
-                        <img src="./img/productos/pollo.jpg" alt="">
-                        <p>${array.nombre}</p>
+                        <img src="${objeto.imagen}" alt="">
+                        <p>${objeto.nombre}</p>
                     </td>
                     <td>
                         <label>
-                        <input type="number" value="1" min="1" max="10">
+                        <input type="number" value="${objeto.cantidad}" min="1" max="10">
                         </label>
                     </td>
                     <td>
-                        <p>$${array.precio}</p>
+                        <p>$${objeto.precio}</p>
                     </td>
                     <td>
-                        <p>$${array.precio}</p>
+                        <p>$${objeto.precio}</p>
                     </td>
                     <td>
-                        <button class="eliminar" type="button" name="eliminar">
+                        <button onclick="eliminarProductoCarrito(${objeto.id})" class="eliminar" type="button" name="eliminar">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="trash bi bi-trash3-fill" viewBox="0 0 16 16">
                             <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                             </svg>
@@ -193,13 +195,13 @@ function printCarrito(array, node) {
  * @param {id del producto a eliminar} id 
  * @param {array donde se encuentras mis productos del carrito} arrayCarrito 
  */
-function eliminarProductoCarrito(id, arrayCarrito) {
+function eliminarProductoCarrito(id) {
 
-    const producto = arrayCarrito.find(elemento => elemento._id == id)
+    const producto = carrito.find(elemento => elemento._id == id)
 
-    const indiceElemento = arrayCarrito.indexOf(producto);
+    const indiceElemento = carrito.indexOf(producto);
 
-    arrayCarrito.splice(indiceElemento, 1);
+    carrito.splice(indiceElemento, 1);
 
 }
 
@@ -215,7 +217,7 @@ function eventoAgregarProducto(arrayProductosFiltrados, arrayTodosMisProductos, 
 
             agregarProducto(arrayTodosMisProductos, idProducto, arrayCarrito);
 
-            localStorage.setItem('array-carrito', JSON.stringify( ...carrito ));
+            localStorage.setItem('array-carrito', JSON.stringify( carrito ));
 
             // window.location()
         })
