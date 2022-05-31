@@ -3,38 +3,17 @@ async function getAPI() {
     await fetch('https://apipetshop.herokuapp.com/api/articulos')
         .then(res => res.json())
         .then(data => {
-
             const productos = data.response;
-            let producto = productos.filter(producto => producto.tipo);
 
-            // let categorias = productos.map(producto => producto.tipo);
-
-            const contenedorProductos = document.querySelector('.productos');
-
-            let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
-
-            const contenedorFarmacia = document.querySelector('.productos');
-
-
-            let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
-
-            const contenedorJuguetes = document.querySelector('.productos');
-
-
-            // printCard(juguetes, contenedorJuguetes);
-            // printCard(farmacia, contenedorFarmacia);
-
-            // printCard(producto, contenedorProductos);
-
+            let contenedorProductos = document.querySelector('.productos');
             let botonJuguete = document.querySelector(".boton-juguete");
             let botonFarma = document.querySelector(".boton-farma");
             let buscador = document.querySelector(".buscar-texto");
 
             let texto = "";
-
             buscador.addEventListener("keyup", (e) => {
-                    texto = e.target.value;
-                    mostarFiltro();
+                texto = e.target.value;
+                mostarFiltro();
             })
 
             let filtroCategoria = [];
@@ -62,11 +41,11 @@ async function getAPI() {
                     filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
                 } else if (filtroCategoria.includes("Juguete") && texto != "") {
                     filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
-                } else if(filtroCategoria.includes("Juguete") && texto == "") {
+                } else if (filtroCategoria.includes("Juguete") && texto == "") {
                     filtro.push(...productos.filter(producto => producto.tipo == filtroCategoria[ultimoElem] && (producto.nombre.toLowerCase().includes((texto.toLowerCase().trim())))));
                 } else if (filtro.length == 0 && texto != "") {
                     filtro.push(...productos.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))))
-                }  else if (filtro.length == 0) {
+                } else if (filtro.length == 0) {
                     filtro.push(...productos);
                 }
                 console.log(filtro)
