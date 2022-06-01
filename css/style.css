@@ -612,6 +612,7 @@ form input:hover {
     padding: 0.5em;
     text-decoration: none;
     margin: 1em;
+    cursor: pointer;
 }
 
 .seguirComprando a:hover {
@@ -619,6 +620,19 @@ form input:hover {
     color: white;
 }
 
+.btn-delete {
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #9e1010;
+    color: #fff;
+    outline: 1px solid #fff;
+}
+
+.card-delete {
+    filter: grayscale(90%);
+}
 
 /* Media Querys */
 
@@ -730,3 +744,4 @@ form input:hover {
         width: 75%;
     }
 }
+
