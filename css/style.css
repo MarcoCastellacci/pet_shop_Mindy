@@ -631,7 +631,8 @@ form input:hover {
 }
 
 .card-delete {
-    filter: grayscale(90%);
+    /* filter: grayscale(90%); */
+    display: none;
 }
 
 /* Media Querys */

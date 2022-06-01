@@ -174,19 +174,21 @@ async function getAPI() {
                 printCardCarrito(arrayLocalStorage, tablaCarrito);
 
                 // ==============
-                // arrayLocalStorage.forEach(producto => {
+                arrayLocalStorage.forEach(producto => {
 
-                //     let botonDelete = document.querySelector(`#delete${producto._id}`);
+                    let botonDelete = document.querySelector(`#delete${producto._id}`);
 
-                //     botonDelete.addEventListener('click', (e) => {
+                    botonDelete.addEventListener('click', (e) => {
 
-                //         console.log(`eliminando ${producto.nombre}..`);
+                        console.log(`eliminando ${producto.nombre}..`);
 
-                //         let contenedorPadre = e.target.parentNode.parentNode.parentNode;
-                //         contenedorPadre.classList.add('card-delete');
+                        let contenedorPadre = e.target.parentNode.parentNode.parentNode;
+                        contenedorPadre.classList.add('card-delete');
 
-                //     })
-                // })
+                    })
+
+                    
+                })
         })
 
 
@@ -261,13 +263,13 @@ function vaciarCarrito() {
     location.reload();
 }
 
-function eliminarProducto(e) {
+// function eliminarProducto(e) {
 
-    let id = e.target.id.split('delete').join('');
-    // console.log(e.target.id.split('delete').join(''));
+//     let id = e.target.id.split('delete').join('');
+//     // console.log(e.target.id.split('delete').join(''));
 
-    arrayLocalStorage = arrayLocalStorage.filter(producto => producto._id != id);
-}
+//     arrayLocalStorage = arrayLocalStorage.filter(producto => producto._id != id);
+// }
 
 
 
