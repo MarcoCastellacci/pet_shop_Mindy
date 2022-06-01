@@ -57,33 +57,41 @@
         <div class="contenedorForm">
             <form class="p-5 m-5" action="" id="form" method="post">
                 <div class="mb-3 ">
-                    <label for="exampleInputNombre" class="form-label">Nombre y Apellido</label>
-                    <input type="text" class="form-control" id="exampleInputNombre">
+                    <label for="exampleInputNombre" class="form-label" >Nombre y Apellido</label>
+                    <input type="tel" class="form-control" id="exampleInputNombre" placeholder="Juan Perez">
+                    <p id="alertaNombre1"></p>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputTelefono" class="form-label">Telefono</label>
-                    <input type="tel" class="form-control" id="exampleInputTelefono">
+                    <input type="text" class="form-control" id="exampleInputTelefono" placeholder="11-XXXXXXXX">
+                    <p id="alertatelefono"></p>
                 </div>
-                <label for="mascota" class="form-label">Indica tu mascota: </label>
 
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="checkPerro">
-                    <label class="form-check-label" for="checkPerro">Perro</label>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="checkGato">
-                    <label class="form-check-label" for="checkGato">Gato</label>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="checkOtros">
-                    <label class="form-check-label" for="checkOtros">Otros</label>
-                </div>
+                <label for="mascota" class="form-label">Indica tu mascota:
+                 <div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkPerro" value="Perro">
+                        <label class="form-check-label" for="checkPerro">Perro</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkGato" value="Gato">
+                        <label class="form-check-label" for="checkGato">Gato</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkOtros" value="Otros">
+                        <label class="form-check-label" for="checkOtros">Otros</label>
+                    </div>
+                    <p id="checkbox"></p>
+                </label>
+
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Dejanos tu comentario</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <button id="finalizar" type="submit" class="boton-contacto">Enviar</button>
 
+            </div>
+                <button id="finalizar" type="submit" class="boton-contacto">Enviar</button>
+                <div id="imprimir"></div>
 
             </form>
         </div>
