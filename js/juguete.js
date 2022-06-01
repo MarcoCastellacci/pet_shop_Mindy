@@ -21,15 +21,16 @@ async function getAPI() {
                 // let ultimoElem = filtroCategoria.length - 1;
                 if (texto != "") {
                     filtro.push(...juguetes.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))));
+
                 } else  filtro.push(...juguetes);
                 
-                // console.log(filtro)
-                // console.log(texto)
+
+                } else filtro.push(...juguetes);
+
+
                 printCard(filtro, contenedorJuguetes);
             }
             mostarFiltro()
 
         })
 }
-
-

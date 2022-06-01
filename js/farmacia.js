@@ -23,8 +23,6 @@ async function getAPI() {
                     filtro.push(...farmacia.filter(producto => producto.nombre.toLowerCase().includes((texto.toLowerCase().trim()))));
                 } else filtro.push(...farmacia);
 
-                // console.log(filtro)
-                // console.log(texto)
                 printCard(filtro, contenedorFarmacia);
             }
             mostarFiltro()
