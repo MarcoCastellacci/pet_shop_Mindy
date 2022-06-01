@@ -555,7 +555,7 @@ form input:hover {
     align-items: center;
     flex-direction: column;
     padding: 0.5em;
-    margin: 3rem;
+    margin: 10rem;
     height: 70vh;
 }
 
@@ -720,7 +720,7 @@ form input:hover {
         width: 100%;
     }
     .mapa {
-        margin-top: -8rem;
+        margin-top: 1rem;
     }
     .buscador {
         /* display: flex;
