@@ -2,7 +2,6 @@ const contenedorJuguetes = document.querySelector('#contenedor-juguetes');
 const contenedorFarmacia = document.querySelector('#contenedor-farmacia');
 const cuerpoCarrito = document.querySelector('#lista-carrito');
 
-
 // function printCard(array, node) {
 
 //     node.innerHTML = '';
@@ -52,52 +51,16 @@ const cuerpoCarrito = document.querySelector('#lista-carrito');
 //     console.log(idEncontrado);
 
 // }
-=======
-function printCard(array, node) {
-    node.innerHTML = '';
-    array.forEach(producto => {
-        if (producto.stock >= 5) {
-            node.innerHTML += ` 
-                        <div class="card col-4" style="width: 18rem;">              
-                                <img class="img-card"  
-                                    src="${producto.imagen}">          
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title font-weight-bold">${producto.nombre}</h5>
-                                <p class="card-text contenedor-parrafo" style="margin-top: auto;">${producto.descripcion}</p>        
-                                <div class="text-center" style="margin-top: auto;">
-                                    <p class="card-text mb-1 fs-5 precio">$${producto.precio}</p>
-                                    <a class="btn btn-naranja mt-3" onclick="agregarProducto('${producto._id}')">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>`
-        } else {
-
-            node.innerHTML += `  
-        <div class="card col-4" style="width: 18rem;">
-            <span class="stock">ultimas unidades!</span>              
-        
-                <img class="img-card"  
-                    src="${producto.imagen}">  
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title font-weight-bold">${producto.nombre}</h5>
-                <p class="card-text contenedor-parrafo" style="margin-top: auto;">${producto.descripcion}</p>
-                <div class="text-center" style="margin-top: auto;">
-                    <p class="card-text mb-1 fs-5 precio">$${producto.precio}</p>
-                    <a class="btn btn-naranja mt-3" onclick="agregarProducto('${producto._id}')">Agregar al carrito</a>
-                </div>
-            </div>
-        </div>`
-        }
-    })
-}
-let idEncontrado = [];
-
-function agregarProducto(idProducto) {
 
 
-    idEncontrado.push(idProducto)
-};
 
+// function buscarProductos(arrayID, arrayProductos) {
+//     let arrayResultado = [];
+//     arrayID.map(id => {
+//         arrayResultado.push(...arrayProductos.filter(producto => producto._id == id))
+//     })
+//     console.log(arrayResultado);
+// }
 
 
 getAPI()
@@ -108,7 +71,6 @@ async function getAPI() {
 
             const productos = data.response;
 
-
             let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
             let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
 
@@ -118,11 +80,6 @@ async function getAPI() {
             // agregarProducto(idEncontrado)
             printCard(juguetes, contenedorJuguetes);
             printCard(farmacia, contenedorFarmacia);
-
-            let arrayCarrito = [];
-            buscarProductos(idEncontrado, productos);
-            agregarProducto(idEncontrado)
-
         })
 }
 
@@ -176,3 +133,4 @@ function printCard(array, node) {
 
     })
 }
+

@@ -3,7 +3,7 @@ async function getAPI() {
     await fetch('https://apipetshop.herokuapp.com/api/articulos')
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             const productos = data.response;
             let productosMasVendidos = productos.filter(producto => producto.stock <= 5)
 
