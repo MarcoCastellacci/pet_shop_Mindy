@@ -118,11 +118,34 @@ function printCard(array, node) {
 
 // }
 
-let carrito = []; // ARRAY DONDE SE VAN A GUARDAR MIS PRODUCTOS
-// revisar si hay datos en mi local storage
-let carritoJuguete = [];
-let carritoFarmacia = [];
+// var carrito = []; // ARRAY DONDE SE VAN A GUARDAR MIS PRODUCTOS
 
+// revisar si hay datos en mi local storage
+
+
+// function revisarLocal () {
+
+//     if (localStorage.getItem('farmacia')) {
+
+//         console.log('hay elementos de farmacia en el local');
+
+//         // GUARDAR ESOS ELEMENTOS EN UNA VARIABLE Y A ESA PUSHEARLE LOS NUEVOS
+
+//         carritoNuevo.push(JSON.parse(localStorage.getItem('farmacia')));
+
+
+//     }
+
+//     if (localStorage.getItem('juguete')) {
+
+//         console.log('hay elementos de juguete en el local');
+
+//         // GUARDAR ESOS ELEMENTOS EN UNA VARIABLE Y A ESA PUSHEARLE LOS NUEVOS
+
+//         carritoNuevo.push(JSON.parse(localStorage.getItem('juguete')));
+
+//     }
+// }
 
 
     // llamada a mi base de datos
@@ -135,58 +158,82 @@ let carritoFarmacia = [];
 
                 const productos = data.response;
 
+                let carrito = [];
+
+                // VEREIFICAR SI YA TIENE CONTENIDO MI LOCAL STORAGE
+
                 if (contenedorFarmacia) {
+
                     let farmacia = productos.filter(producto => producto.tipo == 'Medicamento');
 
                     printCard(farmacia, contenedorFarmacia);
 
                     farmacia.forEach(producto => {
 
-                        let boton = document.querySelector(`#btn${producto._id}`);
+                        let boton = document.querySelector(`#btn${producto._id}`); // BOTON DE MI PRODUCTO
 
-                        boton.addEventListener('click', (e) => {
-                            // console.log(e.target.id.split('btn').join(''));
-                            let id = e.target.id.split('btn').join('');
+                        boton.addEventListener('click', (e) => { // CADA VEZ QUE HAGO CLICK EN AGREGAR CARRITO
+
+                            if (localStorage.getItem('carrito')) {
+
+                                // GUARDAR ESOS ELEMENTOS EN UNA VARIABLE Y A ESA PUSHEARLE LOS NUEVOS
+
+                                carrito = JSON.parse(localStorage.getItem('carrito'));
+
+                            }
+
+                            let id = e.target.id.split('btn').join(''); // GUARDO MI ID CLICKEADO
+
+                            let productoClickeado = productos.find(elemento => elemento._id == id); // GUARDO EL OBJETO DE MI PRODUCTO CLICKEADO
+
+                            carrito = [...carrito, productoClickeado];
 
 
-                            let productoClickeado = productos.find(elemento => elemento._id == id );
-                            console.log(productoClickeado);
+                            localStorage.setItem('carrito', JSON.stringify(carrito)) // CREO UNA KEY DEL ARRAY DE JUGUETES
 
-                            carritoFarmacia.push(productoClickeado);
-
-                            localStorage.setItem('carrito-farmacia', JSON.stringify(carritoFarmacia))    
+                            
                         })
                     })
 
                 }
 
                 if (contenedorJuguetes) {
+
                     let juguetes = productos.filter(producto => producto.tipo == 'Juguete');
 
                     printCard(juguetes, contenedorJuguetes);
 
                     juguetes.forEach(producto => {
 
-                        let boton = document.querySelector(`#btn${producto._id}`);
+                        let boton = document.querySelector(`#btn${producto._id}`); // BOTON DE MI PRODUCTO
 
-                        boton.addEventListener('click', (e) => {
-                            // console.log(e.target.id.split('btn').join(''));
-                            let id = e.target.id.split('btn').join('');
+                        boton.addEventListener('click', (e) => { // CADA VEZ QUE HAGO CLICK EN AGREGAR CARRITO
+
+                            if (localStorage.getItem('carrito')) {
+
+                                // GUARDAR ESOS ELEMENTOS EN UNA VARIABLE Y A ESA PUSHEARLE LOS NUEVOS
+
+                                carrito = JSON.parse(localStorage.getItem('carrito'));
+
+                            }
 
 
-                            let productoClickeado = productos.find(elemento => elemento._id == id );
-                            console.log(productoClickeado);
+                            let id = e.target.id.split('btn').join(''); // GUARDO MI ID CLICKEADO
 
-                            carritoJuguete.push(productoClickeado);
+                            let productoClickeado = productos.find(elemento => elemento._id == id); // GUARDO EL OBJETO DE MI PRODUCTO CLICKEADO
 
-                            localStorage.setItem('carrito-juguete', JSON.stringify(carritoJuguete))
+                            carrito = [...carrito, productoClickeado];
+
+                            localStorage.setItem('carrito', JSON.stringify(carrito)) // CREO UNA KEY DEL ARRAY DE JUGUETES
+
                         })
                     })
 
                 }
+                
+
+
             })
 
     }
 
-// carrito.push(carritoJuguete);
-// carrito.push(carritoFarmacia);
