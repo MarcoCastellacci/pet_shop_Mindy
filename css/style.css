@@ -460,6 +460,7 @@ h2 {
 main .card:hover {
     box-shadow: 0 0 3px rgb(55, 247, 37), 0 0 6px #7ed957, 0 0 6px #819c75, 0 0 30px white, 0 0 40px white, 0 0 100px, 0 0 100px #7ed957;
     transition: box-shadow 1s;
+    cursor: pointer;
     box-shadow: #363636;
 }
 
@@ -611,6 +612,7 @@ form input:hover {
     padding: 0.5em;
     text-decoration: none;
     margin: 1em;
+    cursor: pointer;
 }
 
 .seguirComprando a:hover {
@@ -618,6 +620,20 @@ form input:hover {
     color: white;
 }
 
+.btn-delete {
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #9e1010;
+    color: #fff;
+    outline: 1px solid #fff;
+}
+
+.card-delete {
+    /* filter: grayscale(90%); */
+    display: none;
+}
 
 /* Media Querys */
 
@@ -729,3 +745,4 @@ form input:hover {
         width: 75%;
     }
 }
+
