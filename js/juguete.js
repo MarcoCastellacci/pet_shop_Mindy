@@ -29,7 +29,7 @@ async function getAPI() {
             }
             mostarFiltro()
 
-        })
-}
+//         })
+// }
 
 
