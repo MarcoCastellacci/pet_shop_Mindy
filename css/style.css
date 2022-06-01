@@ -1,7 +1,6 @@
 /* Tomy Aybar - Toys and Pharmacy */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -23,8 +22,30 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.h2-filtro {
+    margin: 5rem auto;
+}
+
+.barra-categoria {
+    background-color: #363636;
+}
+
+.barra-categoria h2 {
+    color: #e2dfdf;
+    padding: 1rem;
+}
+
+.foto-carusel {
+    margin: auto;
+    width: 50%;
+    height: 70vh;
+    object-fit: cover;
+}
+
 .img-card {
     width: 100%;
+    max-height: 284px;
+    min-width: 284px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -54,6 +75,7 @@ body {
     padding: 0 0 10px;
     position: relative;
 }
+
 
 /* .card {} */
 
@@ -90,8 +112,9 @@ body {
     background-color: gray;
 } */
 
-.navbar {
-    width: 50%;
+.navbar-container {
+    width: fit-content;
+    /* float: right; */
 }
 
 .carrito {
@@ -129,7 +152,6 @@ body {
 .navbar-nav {
     display: flex;
     align-items: center;
-    /* margin: 1rem; */
 }
 
 .buscador {
@@ -150,10 +172,10 @@ body {
 
 .buscar-texto {
     width: 100%;
-    ;
     border-radius: 20px;
     border-color: #363636;
     height: 2rem;
+    padding-left: 1rem;
 }
 
 .lupa {
@@ -174,7 +196,8 @@ body {
 }
 
 .perrito img {
-    width: 20%;
+    width: 19%;
+    ;
 }
 
 .redes {
@@ -234,15 +257,15 @@ body {
 }
 
 .foto-juguete {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .foto-farma {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -254,7 +277,8 @@ body {
 
 .info-extra {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .cuotas {
@@ -267,7 +291,7 @@ body {
 }
 
 .cuotas svg {
-    width: 30%;
+    width: 20%;
 }
 
 .envio {
@@ -280,17 +304,26 @@ body {
 }
 
 .envio svg {
-    width: 30%;
+    width: 20%;
 }
 
-.cartas {
+
+/* .cartas {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     margin-top: 5rem;
+} */
+
+.productos .card {
+    height: 30rem;
 }
 
 .card {
+    margin: 0.5em;
+    border: 0.1em outset #c9e265;
+    border-radius: 1em;
+    padding: 1rem 0;
     width: 20vw;
     margin: 1rem;
     border-radius: 10px;
@@ -326,10 +359,6 @@ body {
     background-color: #f2f2f2;
 }
 
-.carrito-list {
-    margin-bottom: 2rem;
-}
-
 input[type="number"] {
     width: 3rem;
     text-align: center;
@@ -342,6 +371,10 @@ input[type="number"] {
 .trash {
     height: 1.3rem;
     margin-bottom: .2rem;
+}
+
+.carrito-list {
+    margin-bottom: 2rem;
 }
 
 th {
@@ -362,18 +395,247 @@ h2 {
 }
 
 
+/* main-Mayra */
+
+.carrousel {
+    width: 100%;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.infoExtra {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.infoExtra div {
+    width: 25vw;
+    height: fit-content;
+    border: 0.1em solid black;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtros div {
+    width: fit-content;
+    background-color: gray;
+    border-right: 0.2em solid green;
+}
+
+#cardsyenvio {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+}
+
+.cajaEnvio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.card img {
+    height: 25vh;
+    object-fit: cover;
+}
+
+main .card:hover {
+    box-shadow: 0 0 3px rgb(55, 247, 37), 0 0 6px #7ed957, 0 0 6px #819c75, 0 0 30px white, 0 0 40px white, 0 0 100px, 0 0 100px #7ed957;
+    transition: box-shadow 1s;
+    cursor: pointer;
+    box-shadow: #363636;
+}
+
+#main-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-contacto h1 {
+    margin: 0.5em;
+}
+
+.contenedorForm {
+    width: 50vw;
+    height: 80vh;
+    margin: auto auto 3em auto;
+}
+
+.contenedorForm input,
+.contenedorForm textarea {
+    border: 0.1em solid #eea435;
+}
+
+form input:hover {
+    border: 0.1em solid black;
+}
+
+.boton-contacto {
+    background-color: #eea435;
+    border-radius: 10%;
+    padding: .5rem 1rem;
+    display: flex;
+    margin: auto;
+}
+
+#main-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-contacto h1 {
+    margin: 0.5em;
+}
+
+.contenedorForm {
+    width: 50vw;
+    height: 80vh;
+    margin-bottom: 3em;
+}
+
+.contenedorForm input,
+.contenedorForm textarea {
+    border: 0.1em solid #eea435;
+}
+
+form input:hover {
+    border: 0.1em solid black;
+}
+
+.botonAtras {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0.5em;
+}
+
+.botonAtras a {
+    width: 9vw;
+    border-radius: 1em;
+    border: 0.1em solid black;
+    color: black;
+    background-color: var(--color-verde-claro);
+    text-decoration: none;
+    text-align: center;
+}
+
+.botonAtras a:hover {
+    background-color: var(--color-verde);
+}
+
+.texto-cat {
+    text-align: center;
+}
+
+.mapa {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5em;
+    margin: 10rem;
+    height: 70vh;
+}
+
+.mapa span {
+    margin-bottom: 0.5em;
+}
+
+.carritoCompras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50% !important;
+}
+
+#mediosPago {
+    display: flex;
+    width: 30vw;
+}
+
+.tarjetasCredito {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjetasCredito img {
+    width: 4vw;
+    height: 8vh;
+    margin: 0.2em;
+    align-items: center;
+}
+
+.comprarShoplist {
+    display: flex;
+    justify-content: center;
+}
+
+.comprarShoplist .btn {
+    align-items: flex-end;
+    width: 25vw;
+    background-color: rgb(1, 93, 146);
+}
+
+.seguirComprando {
+    margin: 1.5em;
+}
+
+.seguirComprando a {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 0.5em;
+    border: 0.1em solid black;
+    padding: 0.5em;
+    text-decoration: none;
+    margin: 1em;
+}
+
+.seguirComprando a:hover {
+    background-color: rgb(1, 93, 146);
+    color: white;
+}
+
+
 /* Media Querys */
 
-@media (max-width: 991px) {
+@media (max-width: 980px) {
     .logo {
         width: 25vw;
     }
-
+    .contenedorForm {
+        width: 70%;
+    }
+    .mapa {
+        margin-top: -8rem;
+    }
     .bars {
         color: black;
         font-size: 2rem;
     }
-
     .carrito {
         width: 5vw;
         height: 4rem;
@@ -382,7 +644,6 @@ h2 {
         border: none;
         color: #363636;
     }
-
     .nav-link {
         font-size: 1.2rem;
         color: black;
@@ -390,24 +651,22 @@ h2 {
         text-align: center;
         margin: .7rem;
     }
-
     .buscador {
         display: flex;
         align-items: center;
-        margin: 2rem auto;
         width: 60%;
     }
-
     .nav-footer a {
         font-size: 1rem;
     }
-
     .footer-datos p {
         font-size: small;
     }
-
     .icon-redes {
         font-size: 2rem;
+    }
+    .perrito img {
+        width: 26%;
     }
 }
 
@@ -418,11 +677,56 @@ h2 {
         border-radius: 50%;
         object-fit: cover;
     }
-
     .foto-farma {
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
         object-fit: cover;
+    }
+    .perrito img {
+        width: 50%;
+        ;
+    }
+}
+
+@media (max-width: 840px) {
+    .perrito img {
+        width: 30%;
+        ;
+    }
+}
+
+@media (max-width: 680px) {
+    .perrito img {
+        width: 40%;
+        ;
+    }
+}
+
+
+/* @media (max-width: 612px) {
+    .perrito img {
+        width: 30%;
+        ;
+    }
+} */
+
+@media (max-width: 600px) {
+    .perrito img {
+        width: 50%;
+        ;
+    }
+    .contenedorForm {
+        width: 100%;
+    }
+    .mapa {
+        margin-top: 1rem;
+    }
+    .buscador {
+        /* display: flex;
+        align-items: center;
+        margin: 2rem auto;
+        margin-top: -2.7rem; */
+        width: 75%;
     }
 }
