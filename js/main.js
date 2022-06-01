@@ -25,7 +25,6 @@
 
 //                 // farmacia.forEach(producto => {
 //                 //     let boton = document.querySelector(`#btn${producto._id}`);
-
 //                 //     boton.addEventListener('click', (e) => {
 
 //                 //         console.log(e.target.id);

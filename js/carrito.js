@@ -1,6 +1,5 @@
 const contenedorJuguetes = document.querySelector('#contenedor-juguetes');
 const contenedorFarmacia = document.querySelector('#contenedor-farmacia');
-const cuerpoCarrito = document.querySelector('#lista-carrito');
 
 // /**
 //  * 
@@ -230,6 +229,7 @@ function printCard(array, node) {
                     })
 
                 }
+
                 
 
 
