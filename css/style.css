@@ -1,6 +1,7 @@
 /* Tomy Aybar - Toys and Pharmacy */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -113,7 +114,7 @@ body {
 } */
 
 .navbar-container {
-    width: fit-content;
+    width: 100%;
     /* float: right; */
 }
 
@@ -240,6 +241,10 @@ body {
     justify-content: center;
 }
 
+.botones-cat a {
+    text-decoration: none;
+}
+
 .boton-juguete {
     display: flex;
     flex-direction: column;
@@ -273,6 +278,7 @@ body {
 .texto-cat {
     font-size: 1.5rem;
     padding: .8rem;
+    text-align: center;
 }
 
 .info-extra {
@@ -427,7 +433,7 @@ h2 {
 }
 
 .filtros div {
-    width: fit-content;
+    width: 90%;
     background-color: gray;
     border-right: 0.2em solid green;
 }
@@ -545,10 +551,6 @@ form input:hover {
     background-color: var(--color-verde);
 }
 
-.texto-cat {
-    text-align: center;
-}
-
 .mapa {
     display: flex;
     justify-content: space-around;
@@ -641,16 +643,20 @@ form input:hover {
     .logo {
         width: 25vw;
     }
+
     .contenedorForm {
         width: 70%;
     }
+
     .mapa {
         margin-top: -8rem;
     }
+
     .bars {
         color: black;
         font-size: 2rem;
     }
+
     .carrito {
         width: 5vw;
         height: 4rem;
@@ -659,6 +665,7 @@ form input:hover {
         border: none;
         color: #363636;
     }
+
     .nav-link {
         font-size: 1.2rem;
         color: black;
@@ -666,20 +673,25 @@ form input:hover {
         text-align: center;
         margin: .7rem;
     }
+
     .buscador {
         display: flex;
         align-items: center;
         width: 60%;
     }
+
     .nav-footer a {
         font-size: 1rem;
     }
+
     .footer-datos p {
         font-size: small;
     }
+
     .icon-redes {
         font-size: 2rem;
     }
+
     .perrito img {
         width: 26%;
     }
@@ -692,12 +704,14 @@ form input:hover {
         border-radius: 50%;
         object-fit: cover;
     }
+
     .foto-farma {
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
         object-fit: cover;
     }
+
     .perrito img {
         width: 50%;
         ;
@@ -731,12 +745,15 @@ form input:hover {
         width: 50%;
         ;
     }
+
     .contenedorForm {
         width: 100%;
     }
+
     .mapa {
         margin-top: 1rem;
     }
+
     .buscador {
         /* display: flex;
         align-items: center;
@@ -746,3 +763,38 @@ form input:hover {
     }
 }
 
+.name-redes {
+    display: none;
+    text-decoration: none;
+}
+
+iframe {
+    border: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    width: 300px;
+    background-color: #fff;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal-content button {
+    margin-right: 10px;
+}
