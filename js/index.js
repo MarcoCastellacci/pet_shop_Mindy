@@ -28,41 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 carrito = JSON.parse(localStorage.getItem('carrito'));
             }
 
-            // Mostrar el modal
-            const modal = document.getElementById('modal');
-            const input = document.getElementById('modal-input');
-            const confirmBtn = document.getElementById('modal-confirm');
-            const cancelBtn = document.getElementById('modal-cancel');
+            // Verificar disponibilidad de stock
+            if (producto.disponibles > 0) {
+                // Preguntar al usuario cuántas unidades desea agregar
+                const unidadesAgregar = prompt(`Ingrese la cantidad de "${producto.producto}" que desea agregar al carrito:`);
 
-            input.value = '';
-            input.focus();
+                // Validar la cantidad ingresada
+                const unidades = parseInt(unidadesAgregar);
+                if (!isNaN(unidades) && unidades > 0 && unidades <= producto.disponibles) {
+                    // Agregar la cantidad especificada al carrito
+                    producto.cantidad = unidades;
+                    carrito.push(producto);
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
 
-            modal.style.display = 'block';
+                    // Actualizar disponibilidad de stock
+                    producto.disponibles -= unidades;
 
-            return new Promise((resolve, reject) => {
-                confirmBtn.onclick = () => {
-                    const cantidad = parseInt(input.value);
-                    if (!isNaN(cantidad) && cantidad > 0 && cantidad <= producto.disponibles) {
-                        // Agregar la cantidad especificada al carrito
-                        producto.cantidad = cantidad;
-                        carrito.push(producto);
-                        localStorage.setItem('carrito', JSON.stringify(carrito));
-
-                        // Actualizar disponibilidad de stock
-                        producto.disponibles -= cantidad;
-
-                        modal.style.display = 'none';
-                        resolve();
-                    } else {
-                        alert('La cantidad ingresada no es válida o supera la disponibilidad de stock.');
-                    }
-                };
-
-                cancelBtn.onclick = () => {
-                    modal.style.display = 'none';
-                    reject();
-                };
-            });
+                    console.log('Producto agregado al carrito:', producto);
+                    console.log('Carrito actualizado:', carrito);
+                } else {
+                    alert('La cantidad ingresada no es válida o supera la disponibilidad de stock.');
+                }
+            } else {
+                alert('No hay unidades disponibles para agregar al carrito.');
+            }
         }
 
         // Agregar evento click a los botones de "Agregar al carrito"
@@ -81,42 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
-    function showModal(message) {
-        const modal = document.getElementById('modal');
-        const input = document.getElementById('modal-input');
-        const confirmBtn = document.getElementById('modal-confirm');
-        const cancelBtn = document.getElementById('modal-cancel');
-
-        input.value = '';
-        input.focus();
-
-        return new Promise((resolve, reject) => {
-            confirmBtn.onclick = () => {
-                const value = input.value;
-                modal.style.display = 'none';
-                resolve(value);
-            };
-
-            cancelBtn.onclick = () => {
-                modal.style.display = 'none';
-                reject();
-            };
-
-            modal.style.display = 'block';
-        });
-    }
-
-    // Uso del popup modal personalizado
-    showModal('Ingrese un valor:')
-        .then(value => {
-            console.log('Valor ingresado:', value);
-        })
-        .catch(() => {
-            console.log('Operación cancelada');
-        });
-
-
 
     getAPI()
     async function getAPI() {

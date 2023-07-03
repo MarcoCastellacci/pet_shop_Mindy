@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/Mindy.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/548721c52b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
@@ -21,8 +22,10 @@
 <body class="d-flex flex-column">
     <header>
         <div class="d-flex justify-content-between align-items-center w-100 head">
-            <img class="logo" src="../img/Logo Transparente.png" alt="">
-            <div class="navbar-container">
+            <div class="p-2 w-100">
+                <img class="logo" src="../img/Logo Transparente.png" alt="">
+            </div>
+            <div class="navbar-container flex-shrink-1 p-2">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -73,7 +76,8 @@
                 <div class="card-body sub-total">
                     <div class="pre-orden">
                         <h5>Pre orden</h5>
-                        <p id="total"></p>
+                        <p class="resumen-compra" id="total"></p>
+                        <p class="resumen-compra" id="total-cantidad"></p>
                     </div>
                     <div class="tarjetasCredito">
                         <img src="../img/Medios de Pago/americanexpress.png" alt=""><img
@@ -93,7 +97,7 @@
         </div>
 
         <div class="seguirComprando">
-            <a onclick="vaciarCarrito()">Vaciar Carrito</a>
+            <a id="btn-vaciar">Vaciar Carrito</a>
         </div>
 
 

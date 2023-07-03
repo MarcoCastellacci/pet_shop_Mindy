@@ -798,3 +798,18 @@ iframe {
 .modal-content button {
     margin-right: 10px;
 }
+
+.cantidad{
+    font-weight: bold;
+}
+
+.num-cantidad{
+    font-size: large;
+    font-weight: 800;
+    color: #3f23dd;
+}
+
+.resumen-compra{
+    font-size: large;
+    font-weight: 800;
+}

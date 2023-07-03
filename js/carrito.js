@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Actualizar el carrito en el almacenamiento local
         localStorage.setItem('carrito', JSON.stringify(carrito));
+        location.reload();
     }
 
 
@@ -89,7 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <p class="card-text contenedor-parrafo" style="margin-top: auto;">${producto.descripcion}</p>
             <div class="text-center" style="margin-top: auto;">
               <p class="card-text mb-1 fs-5 precio">$${producto.precio}</p>
-                <span class="cantidad">Cantidad: ${producto.cantidad}</span>
+                <div>
+                    <span class="cantidad">Cantidad: <span class="num-cantidad">${producto.cantidad}</span></span>
+                </div>
               <button class="btn btn-danger mt-3" id="delete${producto._id}">Eliminar</button>
             </div>
           </div>
@@ -98,6 +101,66 @@ document.addEventListener('DOMContentLoaded', function () {
         // Mostrar las cantidades disponibles de cada producto en el carrito
         mostrarCantidadesDisponibles(array);
     }
+
+    let btnVaciar = document.getElementById('btn-vaciar')
+    btnVaciar.addEventListener('click', (e) => {
+        // Obtener los datos del carrito del local storage
+        const carrito = JSON.parse(localStorage.getItem('carrito'));
+
+        // Verificar si el carrito existe y no está vacío
+        if (carrito && carrito.length > 0) {
+            // Vaciar el carrito
+            carrito.length = 0;
+            // Actualizar los datos del carrito en el local storage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            console.log('El carrito ha sido vaciado correctamente.');
+            // Recargar la página
+            location.reload();
+        } else {
+            console.log('El carrito ya está vacío.');
+        }
+    })
+
+    // Obtener el elemento del total del pre ticket
+    const totalElement = document.getElementById('total');
+    const totalElementCant = document.getElementById('total-cantidad');
+
+    // Función para mostrar el pre ticket y el resumen de la compra
+    function mostrarPreTicket() {
+        // Obtener los datos del carrito del local storage
+        const carrito = JSON.parse(localStorage.getItem('carrito'));
+
+        // Verificar si el carrito existe y no está vacío
+        if (carrito && carrito.length > 0) {
+            // Calcular el total a pagar sumando los precios de los productos en el carrito
+            const totalAPagar = carrito.reduce((total, producto) => total + producto.precio, 0);
+            const totalCantida = carrito.reduce((total, producto) => total + producto.cantidad, 0)
+
+            // Mostrar el total a pagar en el elemento correspondiente
+            totalElement.textContent = `Total: $${totalAPagar.toFixed(2)}`;
+            totalElementCant.textContent = `Cant. Productos: ${totalCantida}`;
+
+            // Mostrar el resumen de la compra
+            const resumenElement = document.createElement('div');
+            resumenElement.classList.add('resumen-compra');
+
+            carrito.forEach((producto) => {
+                const productoElement = document.createElement('p');
+                productoElement.textContent = `${producto.producto} - $${producto.precio.toFixed(2)}`;
+                resumenElement.appendChild(productoElement);
+            });
+
+            // Agregar el resumen de la compra al componente del carrito
+            // const carritoComprasElement = document.querySelector('.carritoCompras');
+            // carritoComprasElement.appendChild(resumenElement);
+        } else {
+            totalElement.textContent = 'Total: $0.00';
+        }
+    }
+
+    // Llamar a la función para mostrar el pre ticket y el resumen de la compra
+    mostrarPreTicket();
+
 
     async function getAPI() {
         await fetch('https://mindhub-xj03.onrender.com/api/petshop')
